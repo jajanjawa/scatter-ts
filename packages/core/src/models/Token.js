@@ -1,4 +1,4 @@
-const {Blockchains} = require("./Blockchains");
+const { Blockchains } = require("./Blockchains");
 
 module.exports.default = class Token {
 

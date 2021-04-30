@@ -13,7 +13,7 @@ module.exports.default = class Network {
         this.token = null;
     }
 
-    static placeholder(){ return new Network(); }
+    static placeholder() { return new Network(); }
 
     static fromJson(json){
         const p = Object.assign(Network.placeholder(), json);
@@ -22,6 +22,6 @@ module.exports.default = class Network {
         return p;
     }
 
-    fullhost(){ return `${this.protocol}://${this.host}${this.port ? ':' : ''}${this.port}` }
-	unique(){ return (`${this.blockchain}:` + (this.chainId.length ? `chain:${this.chainId}` : `${this.host}:${this.port}`)).toLowerCase(); }
+    fullhost() { return `${this.protocol}://${this.host}${this.port ? ':' : ''}${this.port}` }
+	unique() { return (`${this.blockchain}:` + (this.chainId.length ? `chain:${this.chainId}` : `${this.host}:${this.port}`)).toLowerCase(); }
 }

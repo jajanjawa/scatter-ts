@@ -11,22 +11,23 @@ $ npm install scatter-ts
 ```js
 import { ScatterJS, ScatterEOS } from 'scatter-ts';
 import { JsonRpc, Api } from 'eosjs';
+import fetch from 'node-fetch';
 
 ScatterJS.plugins( new ScatterEOS() );
 
 const network = ScatterJS.Network.fromJson({
-    blockchain:'eos',
-    chainId:'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
-    host:'nodes.get-scatter.com',
-    port:443,
-    protocol:'https'
+    blockchain: 'eos',
+    chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+    host: 'eos.eosn.io',
+    port: 443,
+    protocol: 'https'
 });
-const rpc = new JsonRpc(network.fullhost());
+const rpc = new JsonRpc(network.fullhost(), { fetch });
 
 ScatterJS.connect('YourAppName', {network}).then(connected => {
     if(!connected) return console.error('no scatter');
 
-    const eos = ScatterJS.eos(network, Api, {rpc});
+    const eos = ScatterJS.eos(network, Api, { rpc });
 
     ScatterJS.login().then(id => {
         if(!id) return console.error('no identity');

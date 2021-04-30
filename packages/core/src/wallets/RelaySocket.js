@@ -1,23 +1,14 @@
-const Plugin = require("../plugins/Plugin").default;
-const { Blockchains } = require("../models/Blockchains");
-const PluginTypes = require("../plugins/PluginTypes");
-const SocketService = require("../services/SocketService").default;
-const { EVENTS, WALLET_METHODS } = require("../index");
-const LocalSocket = require("./LocalSocket").default;
 const device = require('../util/Device').default;
-
-// import Plugin from "../plugins/Plugin";
-// import {Blockchains} from "../models/Blockchains";
-// import * as PluginTypes from "../plugins/PluginTypes";
-// import SocketService from "../services/SocketService";
-// import {EVENTS, WALLET_METHODS} from "../index";
-// import LocalSocket from "./LocalSocket";
-// import device from '../util/Device';
+const Plugin = require("../plugins/Plugin").default;
+const PluginTypes = require("../plugins/PluginTypes");
+const LocalSocket = require("./LocalSocket").default;
+const SocketService = require("../services/SocketService").default;
+const { Blockchains } = require("../models/Blockchains");
+const { EVENTS, WALLET_METHODS } = require("../index");
 
 const WEB_HOST = `https://relay.get-scatter.com:443`;
 const SOCKET_HOST = `relaysock.get-scatter.com:443`;
 
-// export default class RelaySocket extends Plugin {
 module.exports.default = class RelaySocket extends Plugin {
 	constructor(context, holderFns){
 		super('RelaySocket', PluginTypes.WALLET_SUPPORT);

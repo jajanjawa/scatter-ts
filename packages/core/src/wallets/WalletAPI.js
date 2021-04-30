@@ -3,7 +3,7 @@ const { WALLET_METHODS } = require("../models/WalletInterface");
 module.exports.default = class WalletAPI {
 	static getMethods(context, wallet){
 		const setAndReturnId = (id, forget) => {
-			if(id || forget) context.holderFns.get().identity = id;
+			if (id || forget) context.holderFns.get().identity = id;
 			return forget || id;
 		};
 

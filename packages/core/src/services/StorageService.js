@@ -1,6 +1,7 @@
 let storage = {};
+
 const getWindow = () => {
-    if(typeof window !== 'undefined') return window;
+    if (typeof window !== 'undefined') return window;
     return {
         localStorage:{
             setItem:(key, val) => storage[key] = val,
@@ -11,7 +12,6 @@ const getWindow = () => {
 }
 
 module.exports.default = class StorageService {
-
     constructor(){}
 
     static setAppKey(appkey){

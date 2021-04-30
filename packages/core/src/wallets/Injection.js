@@ -2,18 +2,13 @@ const PluginTypes = require("../plugins/PluginTypes");
 const Plugin = require("../plugins/Plugin").default;
 const WalletAPI = require("./WalletAPI").default;
 
-// import * as PluginTypes from "../plugins/PluginTypes";
-// import Plugin from "../plugins/Plugin";
-// import WalletAPI from "./WalletAPI";
-
-
 let isAvailable = false;
-if(typeof document !== 'undefined'){
+if (typeof document !== 'undefined'){
 	document.addEventListener('walletLoaded', () => isAvailable = true);
 }
 
 const checkForWallet = () => {
-	if(typeof window !== 'undefined' && typeof window.wallet !== 'undefined') {
+	if (typeof window !== 'undefined' && typeof window.wallet !== 'undefined') {
 		isAvailable = true;
 		return true;
 	}
@@ -30,7 +25,6 @@ const pollExistence = async (resolver = null, tries = 0) => {
 	})
 };
 
-// export default class Injection extends Plugin {
 module.exports.default = class Injection extends Plugin {
 
 	constructor(context, holderFns){

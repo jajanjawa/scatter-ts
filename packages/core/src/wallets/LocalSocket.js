@@ -1,16 +1,9 @@
+const WalletAPI = require("./WalletAPI").default;
 const Plugin = require("../plugins/Plugin").default;
 const PluginTypes = require("../plugins/PluginTypes");
 const SocketService = require("../services/SocketService").default;
 const { EVENTS } = require("../index");
-const WalletAPI = require("./WalletAPI").default;
 
-// import Plugin from "../plugins/Plugin";
-// import * as PluginTypes from "../plugins/PluginTypes";
-// import SocketService from "../services/SocketService";
-// import {EVENTS} from "../index";
-// import WalletAPI from "./WalletAPI";
-
-// export default class LocalSocket extends Plugin {
 module.exports.default = class LocalSocket extends Plugin {
 	constructor(context, holderFns){
 		super('LocalSocket', PluginTypes.WALLET_SUPPORT);
@@ -42,7 +35,7 @@ module.exports.default = class LocalSocket extends Plugin {
 		return true;
 	}
 
-	methods(){
+	methods() {
 		return WalletAPI.getMethods(this, () => this.socketService);
 	}
 

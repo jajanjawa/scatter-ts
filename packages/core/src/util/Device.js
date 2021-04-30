@@ -2,7 +2,7 @@ const DeviceUUID = require('./device-uuid').default;
 
 let device;
 
-if(typeof navigator === 'undefined'){
+if (typeof navigator === 'undefined'){
 	device = 'nodejs_env'
 } else {
 	const du = new DeviceUUID().parse();

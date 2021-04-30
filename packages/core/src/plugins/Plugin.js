@@ -7,14 +7,14 @@ module.exports.default = class Plugin {
         this.type = _type;
     }
 
-    static placeholder(){ return new Plugin(); }
-    static fromJson(json){ return Object.assign(Plugin.placeholder(), json); }
+    static placeholder() { return new Plugin(); }
+    static fromJson(json) { return Object.assign(Plugin.placeholder(), json); }
 
-    isSignatureProvider(){
+    isSignatureProvider() {
     	return this.type === PluginTypes.BLOCKCHAIN_SUPPORT;
 	}
 
-	isValid(){
+	isValid() {
     	return Object.keys(PluginTypes).map(x => PluginTypes[x]).includes(this.type);
 	}
 
