@@ -1,11 +1,10 @@
+import DeviceUUID from './device-uuid';
 
 let device;
 
 if(typeof navigator === 'undefined'){
 	device = 'nodejs_env'
 } else {
-	const {DeviceUUID} = require('device-uuid');
-
 	const du = new DeviceUUID().parse();
 	const dua = [
 		du.language,

@@ -66,19 +66,19 @@ class ScatterJS {
 
 			let connected = false;
 			let promises = [];
-			for(let i = 0; i < wallets.length; i++){
+			for (let i = 0; i < wallets.length; i++) {
 				if(connected) return;
 				const wallet = wallets[i];
 				promises.push(Promise.race([
 					wallet.connect(pluginName, options).then(async socketService => {
-						if(socketService) {
-							if(socketService !== 'injection') {
+						if (socketService) {
+							if (socketService !== 'injection') {
 								socket = socketService;
 								socketSetters.map(x => x(socketService));
 							}
-							if(typeof wallet.runBeforeInterfacing === 'function') await wallet.runBeforeInterfacing();
+							if (typeof wallet.runBeforeInterfacing === 'function') await wallet.runBeforeInterfacing();
 							new WalletInterface(wallet.name, wallet.methods(), holderFns.get());
-							if(typeof wallet.runAfterInterfacing === 'function') await wallet.runAfterInterfacing();
+							if (typeof wallet.runAfterInterfacing === 'function') await wallet.runAfterInterfacing();
 							WalletInterface.bindBasics(holderFns.get());
 							connected = true;
 							resolve(true);
@@ -93,7 +93,6 @@ class ScatterJS {
 		})
 	}
 }
-
 
 class Holder {
     constructor(_scatter){
@@ -138,5 +137,3 @@ holder.WalletInterface = WalletInterface;
 holder.WALLET_METHODS = WALLET_METHODS;
 export { Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS };
 export default holder;
-
-
