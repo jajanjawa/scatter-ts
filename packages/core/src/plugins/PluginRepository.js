@@ -1,4 +1,4 @@
-import * as PluginTypes from './PluginTypes';
+const PluginTypes = require('./PluginTypes');
 
 /***
  * Setting up for plugin based generators,
@@ -38,4 +38,4 @@ class PluginRepositorySingleton {
 }
 
 const PluginRepository = new PluginRepositorySingleton();
-export default PluginRepository;
+module.exports.default = PluginRepository;

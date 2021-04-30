@@ -1,6 +1,10 @@
-import * as PluginTypes from "../plugins/PluginTypes";
-import Plugin from "../plugins/Plugin";
-import WalletAPI from "./WalletAPI";
+const PluginTypes = require("../plugins/PluginTypes");
+const Plugin = require("../plugins/Plugin").default;
+const WalletAPI = require("./WalletAPI").default;
+
+// import * as PluginTypes from "../plugins/PluginTypes";
+// import Plugin from "../plugins/Plugin";
+// import WalletAPI from "./WalletAPI";
 
 
 let isAvailable = false;
@@ -26,7 +30,8 @@ const pollExistence = async (resolver = null, tries = 0) => {
 	})
 };
 
-export default class Injection extends Plugin {
+// export default class Injection extends Plugin {
+module.exports.default = class Injection extends Plugin {
 
 	constructor(context, holderFns){
 		super('InjectedWalletV2', PluginTypes.WALLET_SUPPORT);

@@ -1,16 +1,16 @@
-import {
+const {
 	Plugin,
 	PluginTypes,
 	Blockchains,
 	Network,
 	SocketService
-} from '../../core/src';
+} = require('../../core/src');
 
 let socketService = SocketService;
 const proxy = (dummy, handler) => new Proxy(dummy, handler);
 let cache = {};
 
-export default class ScatterEOS extends Plugin {
+module.exports.default = class ScatterEOS extends Plugin {
 
     constructor(){
         super(Blockchains.EOS, PluginTypes.BLOCKCHAIN_SUPPORT);

@@ -1,4 +1,5 @@
-export const MALICIOUS = 'malicious';
-export const LOCKED = 'locked';
-export const PROMPT_CLOSED = 'prompt_closed';
-export const UPGRADE_REQUIRED = 'upgrade_required';
+module.exports.MALICIOUS = 'malicious';
+module.exports.LOCKED = 'locked';
+module.exports.PROMPT_CLOSED = 'prompt_closed';
+module.exports.UPGRADE_REQUIRED = 'upgrade_required';
+

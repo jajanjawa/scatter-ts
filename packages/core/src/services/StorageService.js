@@ -10,7 +10,7 @@ const getWindow = () => {
     }
 }
 
-export default class StorageService {
+module.exports.default = class StorageService {
 
     constructor(){}
 

@@ -1,8 +1,14 @@
-import StorageService from './StorageService'
-import getRandomValues from 'get-random-values';
-import createHash from 'create-hash';
-import WebSocket from 'isomorphic-ws';
-import device from "../util/Device";
+const StorageService = require('./StorageService').default;
+const getRandomValues = require('get-random-values');
+const createHash = require('create-hash');
+const WebSocket = require('isomorphic-ws');
+const device = require("../util/Device").default;
+
+// import StorageService from './StorageService'
+// import getRandomValues from 'get-random-values';
+// import createHash from 'create-hash';
+// import WebSocket from 'isomorphic-ws';
+// import device from "../util/Device";
 
 const suffix = '/socket.io/?EIO=3&transport=websocket';
 
@@ -15,7 +21,8 @@ const random = () => {
     return array.join('');
 };
 
-export default class SocketService {
+// export default class SocketService {
+module.exports.default = class SocketService {
 
     constructor(_plugin, _timeout){
 	    this.plugin = _plugin;

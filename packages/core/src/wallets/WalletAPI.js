@@ -1,6 +1,6 @@
-import {WALLET_METHODS} from "../models/WalletInterface";
+const { WALLET_METHODS } = require("../models/WalletInterface");
 
-export default class WalletAPI {
+module.exports.default = class WalletAPI {
 	static getMethods(context, wallet){
 		const setAndReturnId = (id, forget) => {
 			if(id || forget) context.holderFns.get().identity = id;

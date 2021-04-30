@@ -1,6 +1,6 @@
-import { ScatterJS, ScatterEOS } from '../';
-import { JsonRpc, Api } from 'eosjs';
-import fetch from "node-fetch";
+const { ScatterJS, ScatterEOS } = require('../');
+const { JsonRpc, Api } = require('eosjs');
+const fetch = require("node-fetch");
 
 ScatterJS.plugins( new ScatterEOS() );
 

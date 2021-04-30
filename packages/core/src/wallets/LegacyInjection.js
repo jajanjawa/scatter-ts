@@ -1,5 +1,8 @@
-import * as PluginTypes from "../plugins/PluginTypes";
-import Plugin from "../plugins/Plugin";
+const PluginTypes = require("../plugins/PluginTypes");
+const Plugin = require("../plugins/Plugin").default;
+
+// import * as PluginTypes from "../plugins/PluginTypes";
+// import Plugin from "../plugins/Plugin";
 
 
 let isAvailable = false;
@@ -17,7 +20,8 @@ const pollExistence = async (resolver = null, tries = 0) => {
 	})
 };
 
-export default class LegacyInjection extends Plugin {
+// export default class LegacyInjection extends Plugin {
+module.exports.default = class LegacyInjection extends Plugin {
 
 	constructor(context, holderFns){
 		super('InjectedWallet', PluginTypes.WALLET_SUPPORT);

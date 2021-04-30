@@ -1,6 +1,6 @@
-import {Blockchains} from "./Blockchains";
+const {Blockchains} = require("./Blockchains");
 
-export default class Token {
+module.exports.default = class Token {
 
 	constructor(blockchain = Blockchains.EOS, contract = '', symbol = '', name = null, decimals = null){
 		this.blockchain = blockchain;
@@ -10,6 +10,6 @@ export default class Token {
 		this.decimals = decimals;
 	}
 
-	static placeholder(){ return new Token(); }
-	static fromJson(json){ return Object.assign(this.placeholder(), json); }
+	static placeholder() { return new Token(); }
+	static fromJson(json) { return Object.assign(this.placeholder(), json); }
 }

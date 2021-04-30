@@ -1028,4 +1028,4 @@ var DeviceUUID = function (options) {
     this.Agent = this.DefaultAgent;
     return this;
 };
-export default DeviceUUID;
+module.exports.default = DeviceUUID;

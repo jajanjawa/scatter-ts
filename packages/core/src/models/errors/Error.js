@@ -1,6 +1,6 @@
-import * as ErrorTypes from './ErrorTypes'
+const ErrorTypes = require('./ErrorTypes');
 
-export const ErrorCodes = {
+const ErrorCodes = {
     NO_SIGNATURE:402,
     FORBIDDEN:403,
     TIMED_OUT:408,
@@ -9,7 +9,9 @@ export const ErrorCodes = {
     TOO_MANY_REQUESTS:429
 };
 
-export default class Error {
+module.exports.ErrorCodes = ErrorCodes;
+
+module.exports.default = class Error {
 
     constructor(_type, _message, _code = ErrorCodes.LOCKED){
         this.type = _type;

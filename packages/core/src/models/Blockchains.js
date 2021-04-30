@@ -1,9 +1,9 @@
 
-export const Blockchains = {
+const Blockchains = {
     EOS:'eos',
     ETH:'eth',
     TRX:'trx'
 };
 
-export const BlockchainsArray =
-    Object.keys(Blockchains).map(key => ({key, value:Blockchains[key]}));
+module.exports.Blockchains = Blockchains;
+module.exports.BlockchainsArray = Object.keys(Blockchains).map(key => ({key, value:Blockchains[key]}));
