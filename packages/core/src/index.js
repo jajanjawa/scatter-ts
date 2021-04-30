@@ -24,7 +24,7 @@ let holderFns = {};
 
 class ScatterJS {
 
-	constructor(){
+	constructor() {
 		this.identity = null;
 		this.network = null;
 

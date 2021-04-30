@@ -3,9 +3,8 @@
 	"version": "0.1.0",
 	"description": "Scatter TS (Typescript)",
 	"main": "index.js",
-	"scripts": {
-
-	},
+	"types": "index.d.ts",
+	"scripts": {},
 	"author": "EOS Nation Inc.",
 	"license": "MIT",
 	"dependencies": {
@@ -17,5 +16,6 @@
 		"ws": "^6.1.0"
 	},
 	"devDependencies": {
+		"eosjs": "^21.0.4"
 	}
 }

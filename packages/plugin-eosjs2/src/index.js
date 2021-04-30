@@ -35,7 +35,7 @@ export default class ScatterEOS extends Plugin {
                 });
             },
 
-            sign:async (signargs) => {
+            sign: async (signargs) => {
                 const requiredFields = fieldsFetcher ? fieldsFetcher() : {};
                 signargs.serializedTransaction = Buffer.from(signargs.serializedTransaction).toString('hex');
 
@@ -76,7 +76,7 @@ export default class ScatterEOS extends Plugin {
 	            }
             },
 
-            sign:async (signargs) => {
+            sign: async (signargs) => {
 	            try {
 		            const serializedTransaction = Buffer.from(signargs.serializedTransaction, 'hex');
 
@@ -115,7 +115,7 @@ export default class ScatterEOS extends Plugin {
         }
     }
 
-    signatureProvider(...args){
+    signatureProvider(...args) {
 
         const throwIfNoIdentity = args[0];
 
