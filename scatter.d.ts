@@ -4,6 +4,11 @@ export class ScatterJS {
     static Network: Network;
 
     static plugins( ...plugins: any ): any;
+
+    static connect( plugin: string, options: any ): any;
+    static login(): any;
+    static eos(network: string, Api: any, options: any ): any;
+    static account( account: string ): any;
 }
 
 export class Network {

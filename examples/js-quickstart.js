@@ -1,4 +1,4 @@
-const { ScatterJS, ScatterEOS } = require('../');
+const { ScatterJS, ScatterEOS } = require('../scatter');
 const { JsonRpc, Api } = require('eosjs');
 const fetch = require("node-fetch");
 

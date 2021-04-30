@@ -1,6 +1,6 @@
-const { Blockchains } = require("./Blockchains");
+import { Blockchains } from "./Blockchains";
 
-module.exports.default = class Token {
+export default class Token {
 
 	constructor(blockchain = Blockchains.EOS, contract = '', symbol = '', name = null, decimals = null){
 		this.blockchain = blockchain;

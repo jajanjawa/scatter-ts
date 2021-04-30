@@ -1,8 +1,4 @@
-const ScatterJS = require("./packages/core/src").default;
-const ScatterEOS = require("./packages/plugin-eosjs2/src").default;
-const { Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS } = require("./packages/core/src");
-
-module.exports = {
-    ScatterJS, ScatterEOS,
-    Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS
-};
+import ScatterJS from "./packages/core/src/index";
+import ScatterEOS from "./packages/plugin-eosjs2/src/index";
+export * from "./packages/core/src/index";
+export { ScatterEOS, ScatterJS };

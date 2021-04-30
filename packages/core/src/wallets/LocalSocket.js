@@ -1,10 +1,10 @@
-const WalletAPI = require("./WalletAPI").default;
-const Plugin = require("../plugins/Plugin").default;
-const PluginTypes = require("../plugins/PluginTypes");
-const SocketService = require("../services/SocketService").default;
-const { EVENTS } = require("../index");
+import WalletAPI from "./WalletAPI";
+import Plugin from "../plugins/Plugin";
+import * as PluginTypes from "../plugins/PluginTypes";
+import SocketService from "../services/SocketService";
+import { EVENTS } from "../index";
 
-module.exports.default = class LocalSocket extends Plugin {
+export default class LocalSocket extends Plugin {
 	constructor(context, holderFns){
 		super('LocalSocket', PluginTypes.WALLET_SUPPORT);
 		this.name = 'LocalSocket';

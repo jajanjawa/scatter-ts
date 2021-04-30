@@ -11,7 +11,7 @@ const getWindow = () => {
     }
 }
 
-module.exports.default = class StorageService {
+export default class StorageService {
     constructor(){}
 
     static setAppKey(appkey){

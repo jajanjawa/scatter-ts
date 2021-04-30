@@ -1,7 +1,7 @@
-const { Blockchains } = require('./Blockchains');
-const Token = require("./Token").default;
+import { Blockchains } from './Blockchains';
+import Token from "./Token";
 
-module.exports.default = class Network {
+export default class Network {
     constructor(_name = '', _protocol = 'https', _host = '', _port = 0, blockchain = Blockchains.EOS, chainId = ''){
         this.name = _name;
         this.protocol = _protocol;

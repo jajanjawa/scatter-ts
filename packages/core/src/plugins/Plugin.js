@@ -1,6 +1,6 @@
-const PluginTypes = require("./PluginTypes");
+import * as PluginTypes from "./PluginTypes";
 
-module.exports.default = class Plugin {
+export default class Plugin {
 
     constructor(_name = '', _type = ''){
         this.name = _name;

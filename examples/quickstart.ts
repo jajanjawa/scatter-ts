@@ -1,4 +1,4 @@
-import { ScatterJS, ScatterEOS } from '../';
+import { ScatterJS, ScatterEOS } from '../scatter';
 import { JsonRpc, Api } from 'eosjs';
 import fetch from "node-fetch";
 
@@ -18,3 +18,19 @@ const rpc = new JsonRpc(network.fullhost(), {fetch});
     const info = await rpc.get_info()
     console.log(info);
 })();
+
+export async function login() {
+    ScatterJS
+    const connected = await ScatterJS.connect('SX', {network});
+    if ( connected ) {
+        const id = await ScatterJS.login();
+    }
+}
+
+export function get_api() {
+    return ScatterJS.eos(network, Api, { rpc });
+}
+
+export function get_account() {
+    return ScatterJS.account('eos');
+}

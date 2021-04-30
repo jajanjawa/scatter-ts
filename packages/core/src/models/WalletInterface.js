@@ -1,4 +1,4 @@
-const WALLET_METHODS = {
+export const WALLET_METHODS = {
 	disconnect:'disconnect',
 	isConnected:'isConnected',
 	isPaired:'isPaired',
@@ -33,10 +33,7 @@ const ALTERNATES = {
 	[WALLET_METHODS.getIdentityFromPermissions]:'checkLogin'
 };
 
-module.exports.WALLET_METHODS = WALLET_METHODS;
-
-
-module.exports.default = class WalletInterface {
+export default class WalletInterface {
 
 	constructor(identifier, methods, context){
 		const unavailable = method => () => {

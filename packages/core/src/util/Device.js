@@ -1,8 +1,8 @@
-const DeviceUUID = require('./device-uuid').default;
+import DeviceUUID from './device-uuid';
 
 let device;
 
-if (typeof navigator === 'undefined'){
+if ( typeof navigator === 'undefined') {
 	device = 'nodejs_env'
 } else {
 	const du = new DeviceUUID().parse();
@@ -16,4 +16,4 @@ if (typeof navigator === 'undefined'){
 	device = du.hashMD5(dua.join(':'));
 }
 
-module.exports.default = device;
+export default device;

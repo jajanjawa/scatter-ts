@@ -1,16 +1,16 @@
-const PluginRepository = require('./plugins/PluginRepository').default;
-const SocketService = require('./services/SocketService').default;
-const Plugin = require('./plugins/Plugin').default;
-const PluginTypes = require('./plugins/PluginTypes');
-const { Blockchains } = require('./models/Blockchains');
-const Network = require('./models/Network').default;
-const WalletInterface = require('./models/WalletInterface').default;
-const { WALLET_METHODS } = require('./models/WalletInterface');
-const LocalSocket = require("./wallets/LocalSocket").default;
-const RelaySocket = require("./wallets/RelaySocket").default;
-const LegacyInjection = require("./wallets/LegacyInjection").default;
-const Injection = require("./wallets/Injection").default;
-const Token = require("./models/Token").default;
+import Token from "./models/Token";
+import Plugin from './plugins/Plugin';
+import Injection from "./wallets/Injection";
+import Network from './models/Network';
+import LocalSocket from "./wallets/LocalSocket";
+import RelaySocket from "./wallets/RelaySocket";
+import SocketService from './services/SocketService';
+import WalletInterface from './models/WalletInterface';
+import LegacyInjection from "./wallets/LegacyInjection";
+import PluginRepository from './plugins/PluginRepository';
+import * as PluginTypes from './plugins/PluginTypes';
+import { Blockchains } from './models/Blockchains';
+import { WALLET_METHODS } from './models/WalletInterface';
 
 let origin;
 
@@ -136,8 +136,6 @@ holder.SocketService = SocketService;
 holder.EVENTS = EVENTS;
 holder.WalletInterface = WalletInterface;
 holder.WALLET_METHODS = WALLET_METHODS;
-// export { Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS };
-// export default holder;
 
-module.exports = { Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS };
-module.exports.default = holder;
+export { Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS };
+export default holder;

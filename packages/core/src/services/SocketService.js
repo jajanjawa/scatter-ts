@@ -1,20 +1,20 @@
-const WebSocket = require('isomorphic-ws');
-const createHash = require('create-hash');
-const getRandomValues = require('get-random-values');
-const StorageService = require('./StorageService').default;
-const device = require("../util/Device").default;
+import WebSocket from 'isomorphic-ws';
+import createHash from 'create-hash';
+import getRandomValues from 'get-random-values';
+import StorageService from './StorageService';
+import device from "../util/Device";
 
 const suffix = '/socket.io/?EIO=3&transport=websocket';
 
 const sha256 = data => createHash('sha256').update(data).digest('hex');
 
 const random = () => {
-    const array = new Uint8Array(24);
+    let array = new Uint8Array(24);
     getRandomValues(array);
     return array.join('');
 };
 
-module.exports.default = class SocketService {
+export default class SocketService {
 
     constructor(_plugin, _timeout){
 	    this.plugin = _plugin;
@@ -228,11 +228,7 @@ module.exports.default = class SocketService {
 		        this.send('api', {data:request, plugin:this.plugin})
             })
         });
-    }
-
-
-
-
+	}
 
 	pair(passthrough = false){
 		return new Promise((resolve, reject) => {
@@ -261,12 +257,4 @@ module.exports.default = class SocketService {
 		if(origin.substr(0, 4) === 'www.') origin = origin.replace('www.','');
 		return origin;
 	}
-
-
-
-
-
-
-
-
 }
