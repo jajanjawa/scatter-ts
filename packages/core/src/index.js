@@ -21,7 +21,8 @@ const EVENTS = {
 let socket = null;
 let socketSetters = [];
 let holderFns = {};
-class Index {
+
+class ScatterJS {
 
 	constructor(){
 		this.identity = null;
@@ -115,7 +116,7 @@ class Holder {
 }
 
 
-let holder = new Proxy(new Holder(new Index()), {
+let holder = new Proxy(new Holder(new ScatterJS()), {
 	get(target,name) {
 		if(typeof target[name] !== 'undefined') return target[name];
 		return target.scatter[name];

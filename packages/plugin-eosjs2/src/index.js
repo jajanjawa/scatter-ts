@@ -149,6 +149,6 @@ export default class ScatterEOS extends Plugin {
     }
 }
 
-if(typeof window !== 'undefined') {
+if (typeof window !== 'undefined') {
 	window.ScatterEOS = ScatterEOS;
 }
