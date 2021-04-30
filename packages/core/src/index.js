@@ -4,7 +4,7 @@ import Plugin from './plugins/Plugin';
 import * as PluginTypes from './plugins/PluginTypes';
 import { Blockchains } from './models/Blockchains';
 import Network from './models/Network';
-import WalletInterface, {WALLET_METHODS} from './models/WalletInterface';
+import WalletInterface, { WALLET_METHODS } from './models/WalletInterface';
 import LocalSocket from "./wallets/LocalSocket";
 import RelaySocket from "./wallets/RelaySocket";
 import LegacyInjection from "./wallets/LegacyInjection";
@@ -124,7 +124,7 @@ let holder = new Proxy(new Holder(new ScatterJS()), {
 });
 holderFns.set = s => holder.scatter = s;
 holderFns.get = () => holder.scatter;
-if(typeof window !== 'undefined') window.ScatterJS = holder;
+if (typeof window !== 'undefined') window.ScatterJS = holder;
 
 
 holder.Plugin = Plugin;
@@ -136,7 +136,7 @@ holder.SocketService = SocketService;
 holder.EVENTS = EVENTS;
 holder.WalletInterface = WalletInterface;
 holder.WALLET_METHODS = WALLET_METHODS;
-export {Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS};
+export { Plugin, PluginTypes, Blockchains, Network, SocketService, EVENTS, WalletInterface, WALLET_METHODS };
 export default holder;
 
 
