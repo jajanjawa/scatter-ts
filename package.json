@@ -5,7 +5,7 @@
 	"main": "scatter.js",
 	"types": "scatter.d.ts",
 	"scripts": {
-		"build": "rollup index.js --file scatter.js --format cjs"
+		"prepublishOnly": "rollup index.js --file scatter.js --format cjs"
 	},
 	"author": "EOS Nation Inc.",
 	"license": "MIT",
