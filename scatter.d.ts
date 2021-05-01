@@ -8,7 +8,7 @@ export interface NetworkOptions {
     protocol: 'https' | 'http',
 }
 
-export interface Account {
+export interface ScatterAccount {
     authority: "active" | 'owner' | string;
     blockchain: "eos" | string;
     chainId: string;
@@ -18,7 +18,7 @@ export interface Account {
 }
 
 export interface Identity {
-    accounts: Account[];
+    accounts: ScatterAccount[];
     hash: string;
     name: string;
     publicKey: string;
@@ -26,25 +26,14 @@ export interface Identity {
 
 export interface Authorization {
     actor: string;
-    permission: "active" | 'owner' | string;
+    permission: "active" | "owner" | string;
 }
-export interface TxData {
-  [key: string]: any;
-}
-export interface TxAction {
-    account: 'eosio.token';
-    name: 'transfer';
+
+export interface Action {
+    account: string;
+    name: string;
     authorization: Authorization[];
-    data: TxData;
-}
-
-export interface TxOptions {
-    blocksBehind: number;
-    expireSeconds: number;
-}
-
-export interface EosTransact {
-    transact( actions: { actions: TxAction[] }, options: TxOptions ): any;
+    data: any;
 }
 
 export class ScatterJS {
@@ -56,7 +45,7 @@ export class ScatterJS {
 
     static connect( plugin: string, options: { network: Network } ): Promise<boolean>;
     static login(): Promise<Identity>;
-    static eos(network: Network, Api: any, options: { rpc: JsonRpc } ): EosTransact;
+    static eos(network: Network, Api: any, options: { rpc: JsonRpc } ): Api;
     static account( account: string ): any;
 }
 
@@ -69,7 +58,7 @@ export class Network {
     public chainId: string;
     public token: null;
 
-    constructor ( _name: string, _protocol: string, _host: string, _port: number, blockchain: any, chainId: string)
+    constructor ( _name: string, _protocol: string, _host: string, _port: number, blockchain: any, chainId: string )
 
     static placeholder(): Network;
     static fromJson( json: NetworkOptions ): Network;
