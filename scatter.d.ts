@@ -38,12 +38,12 @@ export interface TxAction {
     data: TxData;
 }
 
-export interface TxOptions { 
+export interface TxOptions {
     blocksBehind: number;
     expireSeconds: number;
 }
 
-export interface EosTransact { 
+export interface EosTransact {
     transact( actions: { actions: TxAction[] }, options: TxOptions ): any;
 }
 
@@ -56,7 +56,7 @@ export class ScatterJS {
 
     static connect( plugin: string, options: { network: Network } ): Promise<boolean>;
     static login(): Promise<Identity>;
-    static eos(network: Network, Api: Api, options: { rpc: JsonRpc } ): EosTransact;
+    static eos(network: Network, Api: any, options: { rpc: JsonRpc } ): EosTransact;
     static account( account: string ): any;
 }
 
