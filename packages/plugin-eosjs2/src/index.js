@@ -5,6 +5,7 @@ import {
 	Network,
 	SocketService
 } from '../../core/src/index';
+import { Buffer } from 'buffer/';
 
 let socketService = SocketService;
 const proxy = (dummy, handler) => new Proxy(dummy, handler);
@@ -44,7 +45,7 @@ export default class ScatterEOS extends Plugin {
                         type:'requestSignature',
                         payload:{ transaction:signargs, blockchain:Blockchains.EOS, network, requiredFields }
                     }).then(x => {
-	                    resolve({signatures:x.signatures, serializedTransaction:Buffer.from(signargs.serializedTransaction, 'hex')})
+	                    resolve({signatures:x.signatures, serializedTransaction: Buffer.from(signargs.serializedTransaction, 'hex')})
                     })
                       .catch(x => reject(x))
                 })
