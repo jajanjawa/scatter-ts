@@ -36,10 +36,42 @@ export interface Action {
     data: any;
 }
 
+export class WalletAPI {
+    // WALLET METHOD
+	disconnect(): Promise<any>;
+	isConnected(): Promise<boolean>;
+	isPaired(): Promise<boolean>;
+	addEventHandler( handler: any, key?: any ): Promise<any>;
+	removeEventHandler( key?: any): Promise<any>;
+	listen( handler: any ): Promise<any>;
+
+	getVersion(): Promise<any>;
+	getIdentity( requiredFields: any ): Promise<any>;
+	getAllAccountsFor( requiredFields: any): Promise<any>;
+	getIdentityFromPermissions(): Promise<any>;
+	forgetIdentity(): Promise<any>;
+	updateIdentity( identity: { name: any, kyc: any } ): Promise<any>;
+	authenticate( nonce: any, data ?: any, publicKey ?: any ): Promise<any>;
+	getArbitrarySignature( publicKey: any, data: any ): Promise<any>;
+	getPublicKey( blockchain: any ): Promise<any>;
+	linkAccount( account: any, network: any ): Promise<any>;
+	hasAccountFor( network: any ): Promise<any>;
+	suggestNetwork( network: any ): Promise<any>;
+	requestTransfer( network: any, to :any, amount: any, options?: any ): Promise<any>;
+	getAvatar(): Promise<any>;
+	requestSignature( payload: any ): Promise<any>;
+	createTransaction( blockchain: any, actions: any, account: any, network: any ): Promise<any>;
+	addToken( token: any, network: any ): Promise<any>;
+	createEncryptionKey( scatterPublicKey: any, otherPublicKey: any, nonce ?: any ): Promise<any>;
+}
+
+
+
 export class ScatterJS {
     public identity: null | string;
     public network: null | Network;
     static Network: Network;
+    static scatter: WalletAPI;
 
     static plugins( ...plugins: any ): any;
 

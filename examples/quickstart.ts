@@ -61,3 +61,6 @@ api.transact(actions, {
 }).catch(err => {
     console.error('error: ', err);
 });
+
+// Wallet Methods
+ScatterJS.scatter.forgetIdentity();
