@@ -1,23 +1,23 @@
 import { Api, JsonRpc } from 'eosjs'
 
 export interface NetworkOptions {
-    blockchain: 'eos' | string;
-    chainId: string,
-    host: string,
-    port: number,
-    protocol: 'https' | 'http',
+    blockchain: string;     // "eos"
+    chainId: string;        // "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906"
+    host: string;           // "api.eosn.io"
+    port: number;           // 443
+    protocol: 'https' | 'http';
 }
 
 export interface ScatterAccount {
-    authority: "active" | 'owner' | string;
-    blockchain: "eos" | string;
-    chainId: string;
-    isHardware: boolean;
-    name: string;
-    publicKey: string;
+    authority: string;      // "active"
+    blockchain: string;     // "eos"
+    chainId: string;        // "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906"
+    isHardware: boolean;    // false
+    name: string;           // "myaccount"
+    publicKey: string;      // "EOS7dC...UUiTwCG"
 }
 
-export interface Identity {
+export interface ScatterIdentity {
     accounts: ScatterAccount[];
     hash: string;
     name: string;
@@ -25,8 +25,8 @@ export interface Identity {
 }
 
 export interface Authorization {
-    actor: string;
-    permission: "active" | "owner" | string;
+    actor: string;          // "myaccount"
+    permission: string;     // "active"
 }
 
 export interface Action {
@@ -65,8 +65,6 @@ export class WalletAPI {
 	createEncryptionKey( scatterPublicKey: any, otherPublicKey: any, nonce ?: any ): Promise<any>;
 }
 
-
-
 export class ScatterJS {
     public identity: null | string;
     public network: null | Network;
@@ -76,7 +74,7 @@ export class ScatterJS {
     static plugins( ...plugins: any ): any;
 
     static connect( plugin: string, options: { network: Network } ): Promise<boolean>;
-    static login(): Promise<Identity>;
+    static login(): Promise<ScatterIdentity>;
     static eos(network: Network, Api: any, options: { rpc: JsonRpc } ): Api;
     static account( account: string ): any;
 }
