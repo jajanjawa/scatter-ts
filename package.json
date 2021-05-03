@@ -1,6 +1,6 @@
 {
 	"name": "scatter-ts",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Scatter TS (Typescript)",
 	"main": "scatter.js",
 	"types": "scatter.d.ts",

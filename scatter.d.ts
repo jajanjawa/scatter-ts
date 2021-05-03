@@ -38,9 +38,9 @@ export interface Action {
 
 export class WalletAPI {
     // WALLET METHOD
-	disconnect(): Promise<any>;
-	isConnected(): Promise<boolean>;
-	isPaired(): Promise<boolean>;
+	disconnect(): boolean;
+	isConnected(): boolean;
+	isPaired(): boolean;
 	addEventHandler( handler: any, key?: any ): Promise<any>;
 	removeEventHandler( key?: any): Promise<any>;
 	listen( handler: any ): Promise<any>;
@@ -49,7 +49,7 @@ export class WalletAPI {
 	getIdentity( requiredFields: any ): Promise<any>;
 	getAllAccountsFor( requiredFields: any): Promise<any>;
 	getIdentityFromPermissions(): Promise<any>;
-	forgetIdentity(): Promise<any>;
+	forgetIdentity(): Promise<boolean>;
 	updateIdentity( identity: { name: any, kyc: any } ): Promise<any>;
 	authenticate( nonce: any, data ?: any, publicKey ?: any ): Promise<any>;
 	getArbitrarySignature( publicKey: any, data: any ): Promise<any>;
