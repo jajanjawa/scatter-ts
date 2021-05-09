@@ -75,6 +75,7 @@ export class ScatterJS {
 
     static connect( plugin: string, options: { network: Network } ): Promise<boolean>;
     static login(): Promise<ScatterIdentity>;
+    static logout(): Promise<void>;
     static eos(network: Network, Api: any, options: { rpc: JsonRpc } ): Api;
     static account( account: string ): any;
 }
