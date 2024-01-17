@@ -94,7 +94,7 @@ export class ScatterJS {
 
     static plugins( ...plugins: any ): any;
 
-    static connect( plugin: string, options: { network?: Network, linkTimeout?: number, allowHttp?: boolean } ): Promise<boolean>;
+    static connect( plugin: string, options: { network?: Network, linkTimeout?: number, allowHttp?: boolean, socketHost: string } ): Promise<boolean>;
     static login(): Promise<ScatterIdentity>;
     static logout(): Promise<void>;
     static eos(network: Network, Api: any, options: { rpc: JsonRpc } ): Api;

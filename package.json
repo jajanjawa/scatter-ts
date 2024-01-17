@@ -1,25 +1,40 @@
 {
-	"name": "scatter-ts",
-	"version": "0.1.9",
-	"description": "Scatter TS (Typescript)",
-	"main": "scatter.js",
-	"types": "scatter.d.ts",
-	"scripts": {
-		"prepublishOnly": "rollup index.js --file scatter.js --format cjs"
-	},
-	"author": "EOS Nation Inc.",
-	"license": "MIT",
-	"dependencies": {
-		"buffer": "^6.0.3",
-		"create-hash": "^1.2.0",
-		"get-random-values": "^1.2.0",
-		"isomorphic-ws": "^4.0.1",
-		"ws": "^6.1.0"
-	},
-	"devDependencies": {
-		"@types/node-fetch": "^2.5.10",
-		"eosjs": "^21.0.4",
-		"node-fetch": "^2.6.1",
-		"rollup": "^2.46.0"
-	}
+  "name": "@jajanjawa/scatter-ts",
+  "version": "0.2.0",
+  "description": "Scatter TS (Typescript)",
+  "main": "scatter.js",
+  "types": "scatter.d.ts",
+  "scripts": {
+    "prepublishOnly": "rollup index.js --file scatter.js --format cjs"
+  },
+  "keywords": [
+    "vexanium",
+    "vex"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jajanjawa/scatter-ts.git"
+  },
+  "author": "EOS Nation Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "create-hash": "^1.2.0",
+    "get-random-values": "^1.2.0",
+    "isomorphic-ws": "^4.0.1",
+    "ws": "6.2.2"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.10",
+    "eosjs": "^21.0.4",
+    "node-fetch": "2.6.7",
+    "rollup": "^2.46.0"
+  },
+  "bugs": {
+    "url": "https://github.com/jajanjawa/scatter-ts/issues"
+  },
+  "homepage": "https://github.com/jajanjawa/scatter-ts#readme",
+  "directories": {
+    "example": "examples"
+  }
 }
