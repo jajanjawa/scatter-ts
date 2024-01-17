@@ -68,6 +68,7 @@ interface ConnectProps {
     network?: Network;
     linkTimeout?: number;
     allowHttp?: boolean;
+    socketHost?:string;
 }
 
 /**
@@ -145,7 +146,6 @@ declare class Holder extends ScatterBase {
 
     connect(...params: Parameters<Scatter["connect"]>): ReturnType<Scatter["connect"]>;
 
-    catchAll(...params: any[]): void
 }
 
 export {

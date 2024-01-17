@@ -20,7 +20,6 @@ const rpc = new JsonRpc(network.fullhost(), {fetch});
 })();
 
 export async function login() {
-    ScatterJS
     const connected = await ScatterJS.connect('SX', {network});
     if ( connected ) {
         const id = await ScatterJS.login();
